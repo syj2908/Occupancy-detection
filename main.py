@@ -29,10 +29,12 @@ def compare_img_hist(img1, img2):
 
 
 def start_detect(gap, threshold):
-    path = r"./test.mp4"
+    #Video you want to process
+    path = r"./test.mp4" 
     capture = cv2.VideoCapture(path)
     size = (int(capture.get(cv2.CAP_PROP_FRAME_WIDTH)),
             int(capture.get(cv2.CAP_PROP_FRAME_HEIGHT)))
+    #position you want to save your video
     videowriter = cv2.VideoWriter(
         r'.\out.avi', cv2.VideoWriter_fourcc(*'XVID'), capture.get(cv2.CAP_PROP_FPS), size)
     ret, background = capture.read()
